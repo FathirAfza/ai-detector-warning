@@ -10,6 +10,23 @@ Rencana, belum dikerjakan:
 - Modul opsional konsistensi istilah.
 - Modul opsional tata bahasa sesuai EYD.
 
+## [1.1.0] - 2026-09-28
+
+### Ditambahkan
+
+- Pola 12: slop, kalimat umum yang tidak membawa informasi ("di era modern ini", "menuju masa depan yang lebih baik").
+- Pola 13: pengulangan kata dan frasa, dengan jumlah kemunculan. Istilah teknis, nama karya, dan kata kunci heading tidak dihitung.
+- Pola 14: konteks antar-kalimat yang tidak nyambung (lompatan ide, klaim yang tidak dikaitkan ke subjek, rujukan "hal ini" yang tidak jelas, kesimpulan yang tidak didukung).
+- Bagian output baru "Cek konteks dan heading": status tiap heading (Nyambung / Sebagian / Tidak nyambung), celah konteks, tabel pengulangan kata, dan daftar slop.
+- Contoh 3: teks berbagian dengan isi Metode yang tidak sesuai heading.
+
+### Diubah
+
+- Cek kesesuaian heading (sebelumnya langkah 3b) sekarang langkah 4 yang wajib dijalankan, digabung dengan cek konteks antar-kalimat. Teks tanpa heading dicek terhadap judul atau topiknya.
+- Langkah proses dinomori ulang 1–9.
+- Saran revisi memakai tempat kosong seperti `[sebutkan bagian desainnya]` untuk informasi yang hanya diketahui penulis.
+- Contoh 1 dan 2 diperbarui dengan bagian output baru.
+
 ## [1.0.0] - 2026-09-28
 
 Rilis pertama.
@@ -42,5 +59,6 @@ Rilis pertama.
 
 - Kisaran kategori Rendah di `SKILL.md` diubah dari ~10–25% menjadi ~0–25%, supaya sesuai dengan hasil pengujian teks spesifikasi (~5–15%).
 
-[Unreleased]: https://github.com/FathirAfza/ai-detector-warning/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/FathirAfza/ai-detector-warning/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/FathirAfza/ai-detector-warning/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/FathirAfza/ai-detector-warning/releases/tag/v1.0.0

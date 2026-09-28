@@ -57,6 +57,36 @@ Detailed catalogue of stylistic patterns that commonly trigger AI-detection fals
 - Why it flags: LLMs often generate plausible-sounding paragraphs per heading without tracking what each section is specifically supposed to contribute, producing smooth but off-target or repetitive sections. Human drafts can have this too (especially when sections are split between team members), so treat it as a moderate signal, and flag it mainly because it also weakens the document regardless of detection.
 - How to check: for each heading, ask "if I hid the heading, could a reader guess it from the paragraph alone?" If not, flag it.
 - Revision: rewrite the section's first sentence so it directly answers the heading, move off-topic sentences to the section they belong in, and cut generic sentences that repeat other sections.
+- If the draft has no headings, apply the same check against the draft's title or the topic the user named (e.g. "deskripsi tema jembatan"). See also pattern 14 for coherence between sentences inside one section.
+
+## 12. Slop: generic filler and empty statements (kalimat kosong)
+- Sentences that sound meaningful but carry no checkable information, and could be pasted into a text on almost any topic.
+- ID: "di era modern ini", "seiring perkembangan zaman", "memiliki peran yang sangat penting", "menghadapi berbagai tantangan", "menuju masa depan yang lebih baik", "memberikan dampak positif bagi masyarakat", "hal ini menjadi sangat relevan".
+- EN: "in today's fast-paced world", "plays a crucial role", "has a significant impact", "paving the way for a brighter future", "in an ever-evolving landscape".
+- Also counts: inflated claims with no support ("sangat inovatif", "solusi terbaik", "revolusioner"), and abstract nouns stacked without any concrete detail from the writer's own work (no numbers, names, materials, steps, results).
+- How to check: for each sentence, ask "what would a reader lose if this sentence were deleted?" If the answer is nothing, or if the sentence would still be true after swapping the subject for a different project, flag it.
+- Why it flags: LLMs fill space with high-probability generic phrasing. Detectors score these phrases as highly predictable, so a paragraph built mostly from them reads as low-perplexity text.
+- Revision: cut the sentence, or replace it with one concrete detail only the writer knows (a measurement, a design decision and its reason, a result, an observation).
+
+## 13. Word and phrase repetition (pengulangan kata)
+- The same content word or phrase recurring within a short span, especially abstract or evaluative ones.
+- ID example: "masa depan" three times in one paragraph; "simbol perjalanan" twice; "lebih ..." five times in five sentences.
+- Also watch for the same sentence opener repeated ("Hal ini...", "Selain itu...", "Dengan adanya..."), and the same idea restated in consecutive sentences with small wording changes.
+- How to check: list content words (not "dan", "yang", "untuk", "ini") that appear 3+ times in one paragraph, or phrases of 2+ words that appear 2+ times. Report the word, the count, and where it appears.
+- Do not flag: consistent use of a technical term, a proper name (project, product, place), or a keyword the heading requires. Using one term consistently is correct academic practice; swapping it for synonyms would make the text worse.
+- Why it flags: repeated abstract phrases lower the text's variety and make it more predictable, and they often mean the paragraph is circling one vague idea instead of adding new information (see pattern 12).
+- Revision: keep the first occurrence, cut or replace the later ones with a concrete detail. If a phrase repeats because two sentences say the same thing, merge them.
+
+## 14. Context not connected between sentences (konteks tidak nyambung)
+- Each sentence reads fine on its own, but the sentences don't build on each other. Common forms:
+  - A sentence jumps to a new idea without any link to the one before (e.g. from the project's name straight to a life lesson, with no step connecting them).
+  - A claim is stated but never tied to the actual subject. A bridge is called "simbol perjalanan", but no part of the bridge is named that shows it.
+  - Pronouns or references ("hal ini", "perjalanan tersebut", "this approach") point to something that was never clearly introduced.
+  - The paragraph's opening promises one topic and its closing sentence talks about another (e.g. opens with "tema", closes with "filosofi").
+  - A conclusion that doesn't follow from what was said ("Dengan demikian, jembatan ini efisien" when no efficiency data was given).
+- How to check: read each pair of consecutive sentences and ask "why does this sentence come after that one?" If there is no answer (no cause, example, contrast, detail, or next step), flag the gap. Then check that the paragraph as a whole stays on its heading or stated topic (pattern 11).
+- Why it flags: LLMs produce locally fluent sentences but often lose the thread across a paragraph, especially in abstract or motivational text. Human drafts can have gaps too, usually because the writer knows the missing step and forgot to write it down, so treat this as a moderate detection signal and a strong quality signal.
+- Revision: add the missing link sentence (usually a concrete detail from the writer's own work), reorder sentences so each one follows from the last, replace vague references with the actual noun, and cut claims that the paragraph doesn't support.
 
 ---
 

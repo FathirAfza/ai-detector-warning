@@ -12,11 +12,42 @@ Bagian "Tema/Filosofi" dari deskripsi karya lomba jembatan. Paragraf naratif dan
 
 **Tinggi (~55–70%)**
 
-Satu paragraf pendek memuat hampir semua marker utama: kontras "tidak hanya... tetapi juga", dua tricolon, kalimat penutup yang merangkum, dan pembuka-penutup yang saling menggemakan. Empat kalimat pertama panjangnya hampir sama (16–19 kata).
+Satu paragraf pendek memuat hampir semua marker utama: kontras "tidak hanya... tetapi juga", dua tricolon, kalimat penutup yang merangkum, dan pembuka-penutup yang saling menggemakan. Empat kalimat pertama panjangnya hampir sama (16–19 kata). Kalimat-kalimatnya juga tidak saling menyambung, dan beberapa frasa diulang.
 
 > Angka ini perkiraan heuristik dari pola gaya tulisan, bukan skor dari Turnitin, GPTZero, atau detector lain. Skill ini tidak punya akses ke model mereka. Detector sungguhan bisa memberi angka berbeda, dan detector itu sendiri juga bisa salah.
 
-### 2. Titik paling berisiko
+### 2. Cek konteks dan heading
+
+Teks tidak punya heading di dalamnya, jadi dicek terhadap topik yang disebut pengguna: bagian "Tema" dari deskripsi karya.
+
+| Bagian | Hasil | Alasan |
+|---|---|---|
+| Tema (seluruh paragraf) | **Sebagian** | Kalimat 1 menyebut tema, tapi kalimat penutup berbicara tentang "filosofi". Tema dan filosofi tercampur di satu bagian (pola 11). |
+
+**Konteks antar-kalimat (pola 14):**
+
+- Kalimat 2 → 3: dari arti nama ("lambang keberanian") langsung pindah ke "simbol perjalanan seseorang". Tidak ada kalimat yang menjelaskan kenapa sebuah jembatan dianggap perjalanan.
+- Kalimat 3 → 4: "Setiap bagian dari perjalanan tersebut" merujuk ke perjalanan yang abstrak, bukan ke bagian jembatan. Pembaca tidak tahu bagian fisik mana yang dimaksud.
+- Sepanjang paragraf: klaim makna ("berdiri teguh", "simbol perjalanan") tidak pernah dikaitkan ke satu pun detail desain (bentuk rangka, pilar, bagian puncak).
+
+**Pengulangan kata (pola 13):**
+
+| Kata/frasa | Jumlah | Catatan |
+|---|---|---|
+| "lebih" | 5 | lebih baik, lebih kuat (2×), lebih berani, lebih siap |
+| "masa depan" | 3 | kalimat 1, 4, 5 |
+| "perjalanan" | 3 | kalimat 3, 4, 5 |
+| "menuju masa depan" | 2 | kalimat 1 dan 5 |
+| "simbol perjalanan" | 2 | kalimat 3 dan 5 |
+| "keberanian" | 2 | kalimat 1 dan 2 |
+| "terus" | 2 | "terus melangkah", "terus berkembang" |
+| "menghadapi" | 2 | "menghadapi berbagai tantangan", "menghadapi masa depan" |
+
+"The Valiant Crest" (3×) dan "jembatan" (2×) tidak dihitung sebagai masalah karena itu nama karya dan objek utamanya.
+
+**Slop (pola 12):** "menghadapi berbagai tantangan", "menuju masa depan yang lebih baik", "penuh harapan". Ketiganya tetap benar kalau subjeknya diganti proyek lain, jadi tidak menambah informasi tentang jembatan ini.
+
+### 3. Titik paling berisiko
 
 **a. Kalimat penutup**
 
@@ -52,7 +83,7 @@ Ini titik paling berat karena tiga pola menumpuk di satu kalimat.
 
 - "keberanian", "ketangguhan", "lambang", "berdiri teguh", "simbol perjalanan", "penuh harapan". Tidak ada satu pun detail fisik jembatan (bentuk, bagian, bahan) yang dikaitkan ke makna tersebut.
 
-### 3. Saran revisi
+### 4. Saran revisi
 
 **Untuk (a):** Hapus kalimat penutup, atau ganti dengan hubungan konkret antara desain dan makna. Contoh:
 
@@ -70,6 +101,10 @@ Isi bagian dalam kurung dengan detail desain yang sebenarnya. Satu detail fisik 
 **Untuk (d):** Tambahkan satu kalimat pendek. Contoh: "Namanya diambil dari kata *crest*, lambang pada perisai ksatria." (Sesuaikan dengan alasan asli pemilihan nama.)
 
 **Untuk (e):** Ganti satu atau dua ungkapan abstrak dengan hal yang bisa dilihat di karya: jumlah pilar, bentuk rangka, warna, atau alasan pemilihan struktur.
+
+**Untuk konteks yang tidak nyambung:** Pisahkan tema dan filosofi. Kalau bagian ini berjudul "Tema", akhiri di tema dan pindahkan penjelasan makna ke bagian "Filosofi". Lalu tambahkan satu kalimat penghubung antara nama dan desain, misalnya "Makna itu kami wujudkan di [bagian desain], yang [penjelasan singkat]."
+
+**Untuk pengulangan:** Sebut "masa depan" dan "simbol perjalanan" sekali saja. Dari lima "lebih", sisakan satu.
 
 **Contoh arah revisi (satu kemungkinan, sesuaikan dengan gaya sendiri):**
 

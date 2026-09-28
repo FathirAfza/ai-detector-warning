@@ -14,6 +14,8 @@ AI detector sering menandai tulisan manusia sebagai buatan AI. Yang paling serin
 
 Skill ini membaca draf kamu, mengutip kalimat yang paling berisiko, menyebut polanya, lalu memberi saran revisi yang tetap mempertahankan makna dan gaya kamu.
 
+Skill ini juga mengecek apakah konteksnya nyambung. Teks buatan AI sering lancar per kalimat tapi tidak saling menyambung, atau isinya tidak menjawab heading-nya. Setiap heading dinilai Nyambung, Sebagian, atau Tidak nyambung. Kalimat umum yang kosong (slop) dan kata yang diulang-ulang juga ditandai.
+
 ### Instalasi
 
 **Aplikasi Claude (claude.ai, desktop):**
@@ -44,11 +46,12 @@ Draf panjang diperiksa per bagian. Kalau teksnya hasil copy dari PDF, cek dulu a
 
 ### Output
 
-Tiga bagian:
+Empat bagian:
 
 1. **Skor risiko**: Rendah / Sedang / Tinggi, dengan kisaran persentase kasar.
-2. **Titik paling berisiko**: kutipan kalimat, nama pola, dan alasannya.
-3. **Saran revisi**: per kalimat atau per kelompok kalimat yang mirip.
+2. **Cek konteks dan heading**: status tiap heading (Nyambung / Sebagian / Tidak nyambung), celah konteks antar-kalimat, daftar kata yang diulang beserta jumlahnya, dan kalimat slop.
+3. **Titik paling berisiko**: kutipan kalimat, nama pola, dan alasannya.
+4. **Saran revisi**: per kalimat atau per kelompok kalimat yang mirip. Kalau perbaikannya butuh informasi yang hanya kamu tahu (detail desain, angka), skill memberi tempat kosong seperti `[sebutkan bagian desainnya]`, bukan mengarang.
 
 Potongan contoh (lengkapnya di [`examples/01-paragraf-filosofi-risiko-tinggi.md`](examples/01-paragraf-filosofi-risiko-tinggi.md)):
 
@@ -66,11 +69,11 @@ a. Hapus kalimat penutup, atau ganti dengan hubungan konkret antara
    desain dan makna.
 ```
 
-Contoh risiko rendah ada di [`examples/02-poster-spesifikasi-risiko-rendah.md`](examples/02-poster-spesifikasi-risiko-rendah.md).
+Contoh risiko rendah ada di [`examples/02-poster-spesifikasi-risiko-rendah.md`](examples/02-poster-spesifikasi-risiko-rendah.md). Contoh cek heading pada teks berbagian ada di [`examples/03-heading-tidak-nyambung-risiko-sedang.md`](examples/03-heading-tidak-nyambung-risiko-sedang.md).
 
 ### Pola yang diperiksa
 
-Daftar lengkap di [`references/markers.md`](ai-detector-risk-check/references/markers.md). Ringkasnya: kontras "bukan X, tapi Y", tricolon, kalimat penutup paragraf yang terlalu rapi, kata transisi di awal paragraf, frasa hedging, kosakata khas AI, panjang kalimat seragam, struktur bagian yang terlalu teratur, simetri berlebihan, penjelasan yang tidak perlu, dan isi yang tidak nyambung dengan heading.
+Daftar lengkap di [`references/markers.md`](ai-detector-risk-check/references/markers.md). Ringkasnya: kontras "bukan X, tapi Y", tricolon, kalimat penutup paragraf yang terlalu rapi, kata transisi di awal paragraf, frasa hedging, kosakata khas AI, panjang kalimat seragam, struktur bagian yang terlalu teratur, simetri berlebihan, penjelasan yang tidak perlu, isi yang tidak nyambung dengan heading, slop (kalimat umum tanpa informasi), pengulangan kata, dan konteks antar-kalimat yang tidak nyambung.
 
 Satu kemunculan pola tidak berarti apa-apa. Yang dihitung adalah kepadatannya.
 
@@ -117,6 +120,8 @@ AI detectors often flag human writing as AI-generated. Formal, structured writin
 
 This skill reads your draft, quotes the sentences with the highest risk, names the pattern behind each, and suggests edits that keep your meaning and your voice.
 
+It also checks whether the context connects. AI text often reads smoothly sentence by sentence while the sentences don't follow from each other, or a section doesn't answer its heading. Each heading gets rated Nyambung / Sebagian / Tidak nyambung (connected / partly / not connected). Generic filler (slop) and repeated words are flagged too.
+
 ### Installation
 
 **Claude app (claude.ai, desktop):**
@@ -147,19 +152,20 @@ Long drafts are checked section by section. If you copied text out of a PDF, loo
 
 ### Output
 
-Three parts:
+Four parts:
 
 1. **Skor risiko** (risk score): Rendah / Sedang / Tinggi (Low / Medium / High), with a rough percentage range.
-2. **Titik paling berisiko** (highest-risk spots): the quoted sentence, the pattern name, and why it reads as AI.
-3. **Saran revisi** (revision guidance): per sentence or per cluster of similar sentences.
+2. **Cek konteks dan heading** (context and heading check): a status per heading, context gaps between sentences, repeated words with counts, and filler sentences.
+3. **Titik paling berisiko** (highest-risk spots): the quoted sentence, the pattern name, and why it reads as AI.
+4. **Saran revisi** (revision guidance): per sentence or per cluster of similar sentences. When a fix needs something only you know (a design detail, a number), the skill leaves a placeholder instead of making it up.
 
 Section headings stay in Indonesian. The analysis follows the language of your draft and of the conversation.
 
-See [`examples/`](examples/) for a high-risk and a low-risk case.
+See [`examples/`](examples/) for a high-risk case, a low-risk case, and a multi-section text with a heading mismatch.
 
 ### Patterns checked
 
-Full list in [`references/markers.md`](ai-detector-risk-check/references/markers.md): "not X but Y" contrasts, rule-of-three lists, tidy paragraph closers, stock transition words, hedging phrases, AI-associated vocabulary, uniform sentence length, over-regular section structure, forced balance, over-explaining, and content that doesn't match its heading.
+Full list in [`references/markers.md`](ai-detector-risk-check/references/markers.md): "not X but Y" contrasts, rule-of-three lists, tidy paragraph closers, stock transition words, hedging phrases, AI-associated vocabulary, uniform sentence length, over-regular section structure, forced balance, over-explaining, content that doesn't match its heading, generic filler (slop), word repetition, and sentences that don't connect.
 
 One occurrence means nothing. Density is what counts.
 

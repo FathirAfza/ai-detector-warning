@@ -16,14 +16,26 @@ Teks ini satu kalimat berisi data teknis (dimensi dan jenis rangka). Pola gaya A
 
 > Angka ini perkiraan heuristik dari pola gaya tulisan, bukan skor dari Turnitin, GPTZero, atau detector lain. Skill ini tidak punya akses ke model mereka. Detector sungguhan bisa memberi angka berbeda, dan detector itu sendiri juga bisa salah.
 
-### 2. Titik paling berisiko
+### 2. Cek konteks dan heading
+
+| Bagian | Hasil | Alasan |
+|---|---|---|
+| Spesifikasi | **Nyambung** | Isinya dimensi dan jenis rangka, sesuai dengan bagian spesifikasi. |
+
+**Konteks antar-kalimat:** tidak ada (hanya satu kalimat).
+
+**Pengulangan kata:** tidak ada. "pilar" muncul dua kali ("pilar lurus", "pilar miring"), tapi itu istilah teknis yang memang harus konsisten.
+
+**Slop:** tidak ada.
+
+### 3. Titik paling berisiko
 
 Tidak ada titik yang perlu ditandai.
 
 - "panjang 650 mm, lebar 100 mm, dan tinggi 150 mm" memang berpola tiga, tapi ini bukan tricolon gaya AI (pola 2). Benda fisik memang punya tiga dimensi, jadi daftar ini isinya data, bukan pilihan gaya.
 - Tidak ada kontras "bukan hanya... tetapi juga", kata transisi, frasa hedging, atau kosakata abstrak.
 
-### 3. Saran revisi
+### 4. Saran revisi
 
 Tidak perlu revisi untuk alasan AI detector.
 
